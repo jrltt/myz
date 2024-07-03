@@ -6,11 +6,14 @@ export async function getWeather(
   { location }: { location: string } = { location: DEFAULT_LOCATION }
 ) {
   const baseURL = "http://api.weatherapi.com/v1";
-  const params = new URLSearchParams({
-    key: WEATHER_API as string,
-    q: location,
-  });
+
   try {
+    if (!WEATHER_API) throw Error("Missing API Key");
+
+    const params = new URLSearchParams({
+      key: WEATHER_API as string,
+      q: location,
+    });
     const data = await fetch(`${baseURL}/current.json?${params.toString()}`);
     const response = await data.json();
 
@@ -18,12 +21,7 @@ export async function getWeather(
   } catch (error: any) {
     console.log(error);
     if (error) {
-      switch (error.type) {
-        case "CredentialsSignin":
-          return "Invalid credentials.";
-        default:
-          return "Something went wrong.";
-      }
+      return "Something went wrong.";
     }
     throw error;
   }
