@@ -19,6 +19,7 @@ import {
   Wind,
 } from "lucide-react";
 import Link from "next/link";
+import { WeatherLoading } from "../components/weather-loading";
 
 export default async function Dashboard() {
   const location = await getLocation();
@@ -33,7 +34,7 @@ export default async function Dashboard() {
       <main className="flex flex-1 flex-col gap-4 px-4 md:gap-8 md:px-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
           <Card className="min-h-[186px] bg-z-blue/25">
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<WeatherLoading />}>
               {location && <WeatherWidget location={location} />}
             </Suspense>
           </Card>
