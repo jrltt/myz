@@ -1,6 +1,7 @@
 {
-  "name": "nextjs",
+  "name": "my-z",
   "version": "0.1.0",
+  "homepage": "https://github.com/jrltt/myz#readme",
   "private": true,
   "scripts": {
     "dev": "next dev",
