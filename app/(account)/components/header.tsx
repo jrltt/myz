@@ -1,13 +1,19 @@
+import Link from "next/link";
+
 export function Header() {
   return (
     <ul>
-      <li>Dashboard</li>
+      <li>
+        <Link href="/dashboard">Dashboard</Link>
+      </li>
       <li>Products</li>
       <li>Claims</li>
       <li>Documents</li>
       <li>Messages</li>
       <li>Contact</li>
-      <li>Settings</li>
+      <li>
+        <Link href="/settings">Settings</Link>
+      </li>
     </ul>
   );
 }
