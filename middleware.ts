@@ -3,7 +3,6 @@ import { getSession, updateSession } from "@/lib/auth.service";
 
 export async function middleware(request: NextRequest) {
   const currentUser = await getSession();
-  console.log(currentUser, request.nextUrl.pathname);
 
   if (
     currentUser &&
