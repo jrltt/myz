@@ -8,7 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 export function timeAgo(dateString: string) {
   const date = new Date(dateString);
   const now = new Date();
-  const diffInSeconds = Math.floor((now - date) / 1000);
+  // FIXME apply correct types
+  const diffInSeconds = Math.floor(((now as any) - (date as any)) / 1000);
 
   const intervals = [
     { label: "year", seconds: 31536000 },
