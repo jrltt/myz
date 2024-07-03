@@ -28,7 +28,9 @@ export default async function Settings() {
         <div className="grid gap-6">
           <Card>
             <CardHeader>
-              <CardTitle>Update your current location</CardTitle>
+              <CardTitle className="font-extralight text-mid-blue">
+                Update your current location
+              </CardTitle>
               <CardDescription>
                 Used to show your weather information and receive alerts.
               </CardDescription>
