@@ -1,3 +1,4 @@
+const DEFAULT_LOCATION = "Barcelona";
 const WEATHER_API = process.env.WEATHER_API_KEY;
 
-export { WEATHER_API };
+export { DEFAULT_LOCATION, WEATHER_API };

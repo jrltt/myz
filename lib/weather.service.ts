@@ -1,8 +1,10 @@
 "use server";
 
-import { WEATHER_API } from "./constants";
+import { WEATHER_API, DEFAULT_LOCATION } from "./constants";
 
-export async function getWeather({ location }: { location: string }) {
+export async function getWeather(
+  { location }: { location: string } = { location: DEFAULT_LOCATION }
+) {
   const baseURL = "http://api.weatherapi.com/v1";
   const params = new URLSearchParams({
     key: WEATHER_API as string,
