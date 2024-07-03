@@ -25,23 +25,21 @@ export default async function Dashboard() {
 
   return (
     <>
-      <div className="mx-auto grid w-full max-w-6xl gap-2">
+      <div className="px-4 pb-4 md:px-8 mx-auto grid w-full max-w-7xl gap-2">
         <h1 className="text-3xl font-extralight text-dark-blue">
           Welcome user!
         </h1>
       </div>
-      <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+      <main className="flex flex-1 flex-col gap-4 px-4 md:gap-8 md:px-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-          <Card x-chunk="dashboard-01-chunk-0">
+          <Card className="min-h-[186px] bg-z-blue/25">
             <Suspense fallback={<p>Loading...</p>}>
               {location && <WeatherWidget location={location} />}
             </Suspense>
           </Card>
-          <Card x-chunk="dashboard-01-chunk-1">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-normal text-blue-900">
-                Air quality
-              </CardTitle>
+              <CardTitle>Air quality</CardTitle>
               <Wind className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -64,11 +62,9 @@ export default async function Dashboard() {
               </Button>
             </CardFooter>
           </Card>
-          <Card x-chunk="dashboard-01-chunk-2">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-normal text-blue-900">
-                Travel insurance
-              </CardTitle>
+              <CardTitle>Travel insurance</CardTitle>
               <Plane className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -91,11 +87,9 @@ export default async function Dashboard() {
               </Button>
             </CardFooter>
           </Card>
-          <Card x-chunk="dashboard-01-chunk-3">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-normal text-blue-900">
-                Online chat
-              </CardTitle>
+              <CardTitle>Online chat</CardTitle>
               <Headset className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -120,7 +114,7 @@ export default async function Dashboard() {
           </Card>
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-          <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
+          <Card className="xl:col-span-2">
             <CardHeader className="flex flex-row items-center">
               <div className="grid gap-2">
                 <CardTitle className="font-extralight text-mid-blue">

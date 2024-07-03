@@ -10,7 +10,7 @@ export default async function Layout({
   return (
     <>
       <Header />
-      <div className="pt-8">{children}</div>
+      <div className="mx-auto grid w-full max-w-7xl gap-2 my-4">{children}</div>
     </>
   );
 }
