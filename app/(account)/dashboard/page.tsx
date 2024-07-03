@@ -1,12 +1,15 @@
 import { Suspense } from "react";
 import { WeatherWidget } from "../components/weather-widget";
+import { getLocation } from "@/lib/location.service";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const location = await getLocation();
+
   return (
     <>
       <h1>Dashboard</h1>
       <Suspense fallback={<p>Loading...</p>}>
-        <WeatherWidget location="Bilbao" />
+        {location && <WeatherWidget location={location} />}
       </Suspense>
     </>
   );
