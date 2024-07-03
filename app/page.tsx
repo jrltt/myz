@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <>
-      <h1>Home</h1>
-    </>
-  );
+import Login from "./login/page";
+
+export default async function Home() {
+  return <Login />;
 }
